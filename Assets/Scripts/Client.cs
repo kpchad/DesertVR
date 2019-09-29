@@ -27,9 +27,9 @@ public class Client : MonoBehaviour
             m_Spawn.name = "Lizard_Clone_" + ++m_IncrementorLizard;
 
             // set coordinate range for objects to spawn within
-            x = Random.Range(-150, 150);
+            x = Random.Range(-100, 100);
             y = 5;
-            z = Random.Range(-150, 150);
+            z = Random.Range(-100, 100);
             Vector3 pos = new Vector3(x, y, z);
 
             m_Spawn.transform.Translate(pos);
