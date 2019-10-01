@@ -20,9 +20,29 @@ public class Client : MonoBehaviour
 
     public void Update()
     {
-        
+        // spawn a lizard or snake every 500 frames
         if (count == 500)
         {
+            SpawnNewLizard();
+        }
+
+        if (count == 1000)
+        {
+            SpawnNewSnake();
+            count = 0;
+        } count++;
+
+        // initialize game on I key press
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            GameManager.Instance.InitializeGame();
+        }
+
+    }
+
+    private void SpawnNewLizard()
+    {
+
             m_Spawn = m_Spawner.SpawnEnemy(m_Lizard);
             m_Spawn.name = "Lizard_Clone_" + ++m_IncrementorLizard;
 
@@ -34,23 +54,21 @@ public class Client : MonoBehaviour
 
             m_Spawn.transform.Translate(pos);
             Debug.Log("X: " + x + " Y: " + y + " Z: " + z);
-        }
-
-        if (count == 1000)
-        {
-            m_Spawn = m_Spawner.SpawnEnemy(m_Snake);
-            m_Spawn.name = "Snake_Clone_" + ++m_IncrementorSnake;
-
-            // set coordinate range for objects to spawn within
-            x = Random.Range(-150, 150);
-            y = 5;
-            z = Random.Range(-150, 150);
-            Vector3 pos = new Vector3(x, y, z);
-
-            m_Spawn.transform.Translate(pos);
-            Debug.Log("X: " + x + " Y: " + y + " Z: " + z);
-            count = 0;
-        }
-        count++;
     }
+
+    private void SpawnNewSnake()
+    {
+        m_Spawn = m_Spawner.SpawnEnemy(m_Snake);
+        m_Spawn.name = "Snake_Clone_" + ++m_IncrementorSnake;
+
+        // set coordinate range for objects to spawn within
+        x = Random.Range(-150, 150);
+        y = 5;
+        z = Random.Range(-150, 150);
+        Vector3 pos = new Vector3(x, y, z);
+
+        m_Spawn.transform.Translate(pos);
+        Debug.Log("X: " + x + " Y: " + y + " Z: " + z);
+    }
+
 }
