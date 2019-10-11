@@ -2,17 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lizard : Enemy
+public class Lizard : Critter
 {
 
-    public void Fly()
+    void Awake()
     {
-        // implement flying functinality
-    }
-
-    public void Fire()
-    {
-        // implement laser fire functionality
+        this.critterBehavior = new JumpingBehavior();
     }
 
 }

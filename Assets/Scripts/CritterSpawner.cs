@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class CritterSpawner : MonoBehaviour
 {
 
     public ICopyable m_Copy;
 
-    public Enemy SpawnEnemy(Enemy prototype)
+    public Critter SpawnCritter(Critter prototype)
     {
         m_Copy = prototype.Copy();
-        return (Enemy)m_Copy;
+        return (Critter)m_Copy;
     }
 
 }

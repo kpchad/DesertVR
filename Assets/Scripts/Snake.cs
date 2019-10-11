@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Snake : Enemy
+public class Snake : Critter
 {
-
-    public void Shoot()
+    void Awake()
     {
-        // implement shooting functionality
+        this.critterBehavior = new ShakingBehavior();
     }
-
 }

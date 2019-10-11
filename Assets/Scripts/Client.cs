@@ -7,9 +7,9 @@ public class Client : MonoBehaviour
 
     public Lizard m_Lizard;
     public Snake m_Snake;
-    public EnemySpawner m_Spawner;
+    public CritterSpawner m_Spawner;
 
-    private Enemy m_Spawn;
+    private Critter m_Spawn;
     private int m_IncrementorLizard = 0;
     private int m_IncrementorSnake = 0;
 
@@ -38,12 +38,26 @@ public class Client : MonoBehaviour
             GameManager.Instance.InitializeGame();
         }
 
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            // applying default critter behavior to critters
+            Critter snakes = ScriptableObject.FindObjectOfType<Snake>();
+            snakes.ApplyBehavior();
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            // applying default critter behavior to critters
+            Critter lizards = ScriptableObject.FindObjectOfType<Lizard>();
+            lizards.ApplyBehavior();
+        }
+
     }
 
     private void SpawnNewLizard()
     {
 
-            m_Spawn = m_Spawner.SpawnEnemy(m_Lizard);
+            m_Spawn = m_Spawner.SpawnCritter(m_Lizard);
             m_Spawn.name = "Lizard_Clone_" + ++m_IncrementorLizard;
 
             // set coordinate range for objects to spawn within
@@ -58,7 +72,7 @@ public class Client : MonoBehaviour
 
     private void SpawnNewSnake()
     {
-        m_Spawn = m_Spawner.SpawnEnemy(m_Snake);
+        m_Spawn = m_Spawner.SpawnCritter(m_Snake);
         m_Spawn.name = "Snake_Clone_" + ++m_IncrementorSnake;
 
         // set coordinate range for objects to spawn within
