@@ -7,7 +7,7 @@ public class Lizard : Critter
 
     void Awake()
     {
-        this.critterBehavior = new JumpingBehavior();
+        setJumpingBehavior();
     }
 
 }

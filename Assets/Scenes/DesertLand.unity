@@ -4609,6 +4609,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 203448239}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &204276054 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7714806288175252992, guid: 74e964d1627735545bed25b11ad136c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1311093142}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &208896472
 GameObject:
   m_ObjectHideFlags: 0
@@ -43209,6 +43215,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 7714806288782716834, guid: 74e964d1627735545bed25b11ad136c9,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714806288782716847, guid: 74e964d1627735545bed25b11ad136c9,
+        type: 3}
+      propertyPath: thisAnimator
+      value: 
+      objectReference: {fileID: 1616421510}
+    - target: {fileID: 7714806288175252992, guid: 74e964d1627735545bed25b11ad136c9,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714806288175253005, guid: 74e964d1627735545bed25b11ad136c9,
+        type: 3}
+      propertyPath: thisAnimator
+      value: 
+      objectReference: {fileID: 204276054}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74e964d1627735545bed25b11ad136c9, type: 3}
 --- !u!1 &1313375070
@@ -55030,6 +55056,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1616421510 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7714806288782716834, guid: 74e964d1627735545bed25b11ad136c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1311093142}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1621375036
 GameObject:
   m_ObjectHideFlags: 0

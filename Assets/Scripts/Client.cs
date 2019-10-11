@@ -20,17 +20,17 @@ public class Client : MonoBehaviour
 
     public void Update()
     {
-        // spawn a lizard or snake every 500 frames
-        if (count == 500)
-        {
-            SpawnNewLizard();
-        }
+        //// spawn a lizard or snake every 500 frames
+        //if (count == 500)
+        //{
+        //    SpawnNewLizard();
+        //}
 
-        if (count == 1000)
-        {
-            SpawnNewSnake();
-            count = 0;
-        } count++;
+        //if (count == 1000)
+        //{
+        //    SpawnNewSnake();
+        //    count = 0;
+        //} count++;
 
         // initialize game on I key press
         if (Input.GetKeyDown(KeyCode.I))
@@ -38,18 +38,27 @@ public class Client : MonoBehaviour
             GameManager.Instance.InitializeGame();
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.J))
         {
             // applying default critter behavior to critters
             Critter snakes = ScriptableObject.FindObjectOfType<Snake>();
-            snakes.ApplyBehavior();
+            snakes.setJumpingBehavior();
         }
 
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             // applying default critter behavior to critters
             Critter lizards = ScriptableObject.FindObjectOfType<Lizard>();
-            lizards.ApplyBehavior();
+            lizards.setShakingBehavior();
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            // applying sprinting behavior to critters
+            Critter snakes = ScriptableObject.FindObjectOfType<Snake>();
+            Critter lizards = ScriptableObject.FindObjectOfType<Lizard>();
+            lizards.setSprintingBehavior();
+            snakes.setSprintingBehavior();
         }
 
     }
