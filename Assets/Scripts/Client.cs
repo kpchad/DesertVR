@@ -41,15 +41,14 @@ public class Client : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.J))
         {
             // applying default critter behavior to critters
-            Critter snakes = ScriptableObject.FindObjectOfType<Snake>();
-            snakes.setJumpingBehavior();
+            //m_Snake.setIdleBehavior();
         }
 
         if (Input.GetKeyDown(KeyCode.S))
         {
             // applying default critter behavior to critters
             Critter lizards = ScriptableObject.FindObjectOfType<Lizard>();
-            lizards.setShakingBehavior();
+            //lizards.setShakingBehavior();
         }
 
         if (Input.GetKeyDown(KeyCode.P))

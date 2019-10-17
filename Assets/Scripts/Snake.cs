@@ -7,7 +7,7 @@ public class Snake : Critter
 
     void Awake()
     {
-        setShakingBehavior();
+        
     }
 
 }

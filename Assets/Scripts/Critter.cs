@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Critter : MonoBehaviour, ICopyable
 {
-
+    private Animator anim;
     public ICopyable Copy()
     {
         return Instantiate(this);
+    }
+
+    public void Awake()
+    {
+        anim = gameObject.GetComponent<Animator>();
+        Debug.Log(anim);
     }
 
     public void setSprintingBehavior()
@@ -18,21 +24,26 @@ public class Critter : MonoBehaviour, ICopyable
         m_Animator.runtimeAnimatorController = sprintingAnimationController;
     }
 
-    public void setJumpingBehavior()
+    public void setAttackBehavior()
     {
         var m_Animator = gameObject.GetComponent<Animator>();
-        RuntimeAnimatorController jumpingAnimationController = Resources.Load<RuntimeAnimatorController>("Jumping");
-        Debug.Log("move critter: " + jumpingAnimationController);
-        m_Animator.runtimeAnimatorController = jumpingAnimationController;
+        m_Animator.Play("Attack", -1, 0f);
+        Debug.Log("Idle ");
     }
 
-    public void setShakingBehavior()
+    public void setIdleBehavior()
     {
         var m_Animator = gameObject.GetComponent<Animator>();
-        RuntimeAnimatorController shakingAnimationController = Resources.Load<RuntimeAnimatorController>("Shaking");
-        Debug.Log("move critter: " + shakingAnimationController);
-        m_Animator.runtimeAnimatorController = shakingAnimationController;
+        m_Animator.Play("Idle", -1, 0f);
+        Debug.Log("Idle ");
     }
 
+    public void setSlitherBehavior()
+    {
+        anim = gameObject.GetComponent<Animator>();
+        Debug.Log(anim);
+        anim.Play("Slither", -1, 0f);
+        Debug.Log("slither " + anim);
+    }
 
 }

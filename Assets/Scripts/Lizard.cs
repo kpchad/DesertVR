@@ -5,9 +5,5 @@ using UnityEngine;
 public class Lizard : Critter
 {
 
-    void Awake()
-    {
-        setJumpingBehavior();
-    }
 
 }
